@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : granatier
-Version  : 19.08.3
-Release  : 14
-URL      : https://download.kde.org/stable/applications/19.08.3/src/granatier-19.08.3.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.3/src/granatier-19.08.3.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.3/src/granatier-19.08.3.tar.xz.sig
+Version  : 19.12.0
+Release  : 15
+URL      : https://download.kde.org/stable/release-service/19.12.0/src/granatier-19.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/19.12.0/src/granatier-19.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/19.12.0/src/granatier-19.12.0.tar.xz.sig
 Summary  : A clone of the classic Bomberman game
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -68,14 +68,15 @@ locales components for the granatier package.
 
 
 %prep
-%setup -q -n granatier-19.08.3
+%setup -q -n granatier-19.12.0
+cd %{_builddir}/granatier-19.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573158690
+export SOURCE_DATE_EPOCH=1576544784
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -92,11 +93,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1573158690
+export SOURCE_DATE_EPOCH=1576544784
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/granatier
-cp %{_builddir}/granatier-19.08.3/COPYING %{buildroot}/usr/share/package-licenses/granatier/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/granatier-19.08.3/COPYING.DOC %{buildroot}/usr/share/package-licenses/granatier/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/granatier-19.12.0/COPYING %{buildroot}/usr/share/package-licenses/granatier/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/granatier-19.12.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/granatier/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
 pushd clr-build
 %make_install
 popd
