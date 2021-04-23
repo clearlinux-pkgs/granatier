@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : granatier
-Version  : 20.12.3
-Release  : 27
-URL      : https://download.kde.org/stable/release-service/20.12.3/src/granatier-20.12.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.12.3/src/granatier-20.12.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.12.3/src/granatier-20.12.3.tar.xz.sig
+Version  : 21.04.0
+Release  : 28
+URL      : https://download.kde.org/stable/release-service/21.04.0/src/granatier-21.04.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/21.04.0/src/granatier-21.04.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/21.04.0/src/granatier-21.04.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -69,15 +69,15 @@ locales components for the granatier package.
 
 
 %prep
-%setup -q -n granatier-20.12.3
-cd %{_builddir}/granatier-20.12.3
+%setup -q -n granatier-21.04.0
+cd %{_builddir}/granatier-21.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618656460
+export SOURCE_DATE_EPOCH=1619203273
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -93,11 +93,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1618656460
+export SOURCE_DATE_EPOCH=1619203273
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/granatier
-cp %{_builddir}/granatier-20.12.3/COPYING %{buildroot}/usr/share/package-licenses/granatier/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/granatier-20.12.3/COPYING.DOC %{buildroot}/usr/share/package-licenses/granatier/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/granatier-21.04.0/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/7697008f58568e61e7598e796eafc2a997503fde
+cp %{_builddir}/granatier-21.04.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/3e8971c6c5f16674958913a94a36b1ea7a00ac46
 pushd clr-build
 %make_install
 popd
@@ -226,7 +226,6 @@ popd
 /usr/share/icons/hicolor/32x32/apps/granatier.png
 /usr/share/icons/hicolor/48x48/apps/granatier.png
 /usr/share/icons/hicolor/64x64/apps/granatier.png
-/usr/share/kxmlgui5/granatier/granatierui.rc
 /usr/share/metainfo/org.kde.granatier.appdata.xml
 /usr/share/qlogging-categories5/granatier.categories
 
@@ -295,8 +294,8 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/granatier/4cc77b90af91e615a64ae04893fdffa7939db84c
-/usr/share/package-licenses/granatier/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+/usr/share/package-licenses/granatier/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+/usr/share/package-licenses/granatier/7697008f58568e61e7598e796eafc2a997503fde
 
 %files locales -f granatier.lang
 %defattr(-,root,root,-)
