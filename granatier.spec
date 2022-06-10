@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : granatier
-Version  : 22.04.1
-Release  : 39
-URL      : https://download.kde.org/stable/release-service/22.04.1/src/granatier-22.04.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.04.1/src/granatier-22.04.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.04.1/src/granatier-22.04.1.tar.xz.sig
+Version  : 22.04.2
+Release  : 40
+URL      : https://download.kde.org/stable/release-service/22.04.2/src/granatier-22.04.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.2/src/granatier-22.04.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.2/src/granatier-22.04.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 GFDL-1.2 GPL-2.0 LGPL-2.0
@@ -68,15 +68,15 @@ locales components for the granatier package.
 
 
 %prep
-%setup -q -n granatier-22.04.1
-cd %{_builddir}/granatier-22.04.1
+%setup -q -n granatier-22.04.2
+cd %{_builddir}/granatier-22.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652646691
+export SOURCE_DATE_EPOCH=1654834430
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -92,15 +92,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1652646691
+export SOURCE_DATE_EPOCH=1654834430
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/granatier
-cp %{_builddir}/granatier-22.04.1/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/granatier/29fb05b49e12a380545499938c4879440bd8851e
-cp %{_builddir}/granatier-22.04.1/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/granatier/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/granatier-22.04.1/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/granatier/8287b608d3fa40ef401339fd907ca1260c964123
-cp %{_builddir}/granatier-22.04.1/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/7697008f58568e61e7598e796eafc2a997503fde
-cp %{_builddir}/granatier-22.04.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/3e8971c6c5f16674958913a94a36b1ea7a00ac46
-cp %{_builddir}/granatier-22.04.1/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/granatier/a4c60b3fefda228cd7439d3565df043192fef137
+cp %{_builddir}/granatier-22.04.2/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/granatier/29fb05b49e12a380545499938c4879440bd8851e
+cp %{_builddir}/granatier-22.04.2/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/granatier/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/granatier-22.04.2/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/granatier/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/granatier-22.04.2/LICENSES/GFDL-1.2-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/7697008f58568e61e7598e796eafc2a997503fde
+cp %{_builddir}/granatier-22.04.2/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/granatier/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/granatier-22.04.2/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/granatier/a4c60b3fefda228cd7439d3565df043192fef137
 pushd clr-build
 %make_install
 popd
